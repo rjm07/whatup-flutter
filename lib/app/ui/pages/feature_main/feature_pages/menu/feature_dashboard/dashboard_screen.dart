@@ -6,8 +6,6 @@ import 'package:wasender/app/ui/pages/feature_main/feature_pages/menu/feature_pr
 import 'package:wasender/app/ui/shared/widgets/dashboard_cards.dart';
 
 import '../../../../../../core/models/dashboard/dashboard_response.dart';
-import '../../../../../../core/models/perangkat_saya/device_list.dart';
-import '../../../../../../core/models/perangkat_saya/perangkat_saya.dart';
 import '../../../../../../core/services/fcm.dart';
 import '../../../../../../core/services/perangkat_saya/perangkat_saya.dart';
 import '../../../../../../core/services/preferences.dart';
@@ -149,6 +147,7 @@ class _DashboardScreenState extends State<DashboardScreen> with WidgetsBindingOb
           int? totalPerangkat = data?['total_perangkat'];
           int? perangkatAktif = data?['perangkat_aktif'];
           int? perangkatNonAktif = data?['perangkat_non_aktif'];
+
           final List<dynamic>? perangkatTerhubung = data?['perangkat_terhubung'];
 
           return Scaffold(

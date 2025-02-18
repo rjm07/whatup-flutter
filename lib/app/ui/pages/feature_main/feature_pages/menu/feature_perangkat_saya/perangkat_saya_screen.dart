@@ -5,7 +5,6 @@ import 'package:wasender/app/ui/pages/feature_main/feature_pages/menu/feature_pe
 import 'package:wasender/app/ui/shared/widgets/perangkat_saya_cards.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import '../../../../../../core/models/perangkat_saya/device_list.dart';
-import '../../../../../../core/models/perangkat_saya/perangkat_saya.dart';
 import '../../../../../../core/services/navigation/navigation.dart';
 import '../../../../../../core/services/preferences.dart';
 import '../../../../../../utils/lang/colors.dart';

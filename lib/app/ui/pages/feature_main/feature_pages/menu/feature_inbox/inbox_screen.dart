@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:wasender/app/core/models/perangkat_saya/perangkat_saya.dart';
 import 'package:wasender/app/core/services/perangkat_saya/perangkat_saya.dart';
-import 'package:wasender/app/ui/pages/feature_main/feature_pages/menu/feature_perangkat_saya/perangkat_saya_detail_screen.dart';
 import 'package:wasender/app/ui/shared/widgets/perangkat_saya_cards.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import '../../../../../../core/models/perangkat_saya/device_list.dart';
