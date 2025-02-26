@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:wasender/app/ui/pages/feature_main/feature_pages/menu/feature_perangkat_saya/settings_page/agent_screen.dart';
-import 'package:wasender/app/ui/pages/feature_main/feature_pages/menu/feature_perangkat_saya/settings_page/info_screen.dart';
-import 'package:wasender/app/ui/pages/feature_main/feature_pages/menu/feature_perangkat_saya/settings_page/pengaturan_inbox_ticket_screen.dart';
-import 'package:wasender/app/ui/pages/feature_main/feature_pages/menu/feature_perangkat_saya/settings_page/perangkat_info_screen.dart';
-import 'package:wasender/app/ui/pages/feature_main/feature_pages/menu/feature_profile/my_profile/tabs/security.dart';
-import 'package:wasender/app/ui/pages/feature_main/feature_pages/menu/feature_profile/my_profile/tabs/view_profile.dart';
 
 import '../../../../../../core/services/navigation/navigation.dart';
 import '../../../../../../utils/lang/colors.dart';
+import 'active_settings/agent_screen.dart';
+import 'active_settings/info_screen.dart';
+import 'active_settings/pengaturan_inbox_ticket_screen.dart';
+import 'active_settings/perangkat_info_screen.dart';
 
 class InformasiPerangkatScreen extends StatefulWidget {
   final int initialTabIndex;
