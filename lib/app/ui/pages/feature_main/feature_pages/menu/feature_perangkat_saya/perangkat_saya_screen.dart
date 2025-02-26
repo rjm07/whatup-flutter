@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:wasender/app/core/services/perangkat_saya/perangkat_saya.dart';
-import 'package:wasender/app/ui/pages/feature_main/feature_pages/menu/feature_perangkat_saya/perangkat_saya_detail_screen.dart';
+import 'package:wasender/app/ui/pages/feature_main/feature_pages/menu/feature_perangkat_saya/informasi_perangkat_screen.dart';
 import 'package:wasender/app/ui/shared/widgets/perangkat_saya_cards.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import '../../../../../../core/models/perangkat_saya/device_list.dart';
@@ -188,13 +188,7 @@ class _PerangkatSayaScreenState extends State<PerangkatSayaScreen> {
                         ),
                         child: GestureDetector(
                           onTap: () {
-                            Navigator.of(context).push(
-                              MaterialPageRoute(
-                                builder: (context) => PerangkatSayaDetailScreen(
-                                  whatsappNumber: device.whatsappNumber,
-                                ),
-                              ),
-                            );
+                            _spConnected(context);
                           },
                           child: PerangkatSayaCard(
                             color: Colors.white,
@@ -221,4 +215,82 @@ class _PerangkatSayaScreenState extends State<PerangkatSayaScreen> {
       ),
     );
   }
+}
+
+void _spConnected(BuildContext context) {
+  showModalBottomSheet(
+    context: context,
+    isScrollControlled: true,
+    shape: const RoundedRectangleBorder(
+      borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
+    ),
+    builder: (BuildContext context) {
+      return Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Container(
+              width: double.infinity, // Expands to full width
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(12),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.shade50,
+                    blurRadius: 5,
+                    spreadRadius: 2,
+                  ),
+                ],
+              ),
+              child: Column(
+                children: [
+                  TextButton(
+                    onPressed: () {
+                      NavService.push(
+                        screen: InformasiPerangkatScreen(
+                          initialTabIndex: 2,
+                        ),
+                      );
+                    },
+                    child: const Text("Show Informasi",
+                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.normal, color: Colors.black38)),
+                  ),
+                  Divider(
+                    thickness: 0.5,
+                    color: Colors.black12,
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      // Call the logout method
+                      Navigator.of(context).pop(); // Close bottom sheet
+                    },
+                    child: const Text("Refresh",
+                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.normal, color: Colors.black38)),
+                  ),
+                  Divider(
+                    thickness: 0.5,
+                    color: Colors.black12,
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      // Call the logout method
+                      NavService.push(
+                        screen: InformasiPerangkatScreen(
+                          initialTabIndex: 0,
+                        ),
+                      );
+                    },
+                    child: const Text("Settings",
+                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.normal, color: Colors.black38)),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      );
+    },
+  );
 }
