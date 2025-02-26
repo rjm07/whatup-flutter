@@ -61,6 +61,7 @@ class _AgentScreenState extends State<AgentScreen> {
               ),
             ),
           ),
+          SizedBox(height: 16),
           Expanded(
             child: ListView.builder(
               itemCount: users.length,

@@ -26,14 +26,6 @@ class _PerangkatInfoScreenState extends State<PerangkatInfoScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              'Perangkat',
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-                color: Colors.black38,
-              ),
-            ),
             SizedBox(height: 20),
             _buildLabel('ID Perangkat', 'Informasi ID Perangkat.', idController),
             SizedBox(height: 15),
