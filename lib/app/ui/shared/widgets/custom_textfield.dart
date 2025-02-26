@@ -148,3 +148,168 @@ class WidgetWithOutlineTextField extends StatelessWidget {
     );
   }
 }
+
+class WidgetBuildLabel extends StatelessWidget {
+  const WidgetBuildLabel({
+    super.key,
+    required this.title,
+    required this.subtitle,
+    required this.value,
+    required this.onChanged,
+    this.controller,
+    required TextInputType keyboardType,
+  });
+
+  final String title;
+  final String subtitle;
+  final String value;
+  final TextEditingController? controller;
+  final Function(String) onChanged;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
+          children: [
+            Text(
+              title,
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(
+              width: 5,
+            ),
+            Text(
+              subtitle,
+              style: TextStyle(
+                  fontSize: 12, fontWeight: FontWeight.normal, fontStyle: FontStyle.italic, color: Colors.black38),
+            ),
+          ],
+        ),
+        SizedBox(
+          height: 4,
+        ),
+        WidgetWithOutlineTextField(
+            label: '',
+            controller: controller,
+            textInputType: TextInputType.text,
+            prefixColor: Colors.black38,
+            suffixColor: Colors.red,
+            textAlign: TextAlign.start),
+      ],
+    );
+  }
+}
+
+class WidgetBuildSwitch extends StatelessWidget {
+  const WidgetBuildSwitch({
+    super.key,
+    required this.title,
+    required this.subtitle,
+    required this.value,
+    required this.onChanged,
+  });
+
+  final String title;
+  final String subtitle;
+  final bool value;
+  final Function(bool) onChanged;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                title,
+                style: TextStyle(
+                  fontWeight: FontWeight.w500,
+                  color: Colors.black87,
+                  fontSize: 18.0,
+                ),
+              ),
+              SizedBox(height: 4),
+              Text(
+                subtitle,
+                style: TextStyle(fontSize: 12, color: Colors.black54),
+              ),
+            ],
+          ),
+        ),
+        SizedBox(width: 24),
+        Switch(
+          value: value,
+          onChanged: onChanged,
+          activeColor: Colors.green,
+          inactiveThumbColor: Colors.grey,
+          inactiveTrackColor: Colors.grey.shade300,
+        ),
+      ],
+    );
+  }
+}
+
+class WidgetBuildDropdown extends StatelessWidget {
+  const WidgetBuildDropdown({
+    super.key,
+    required this.title,
+    required this.subtitle,
+    required this.value,
+    required this.onChanged,
+    required this.items,
+    this.selectedInboxType,
+  });
+
+  final String title;
+  final String subtitle;
+  final String value;
+  final String? selectedInboxType;
+  final Function() onChanged;
+  final List<String> items;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
+          children: [
+            Text(
+              title,
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal),
+            ),
+            SizedBox(
+              width: 5,
+            ),
+            Text(
+              subtitle,
+              style: TextStyle(
+                  fontSize: 14, fontWeight: FontWeight.normal, fontStyle: FontStyle.italic, color: Colors.black38),
+            ),
+          ],
+        ),
+        SizedBox(
+          height: 4,
+        ),
+        DropdownButtonFormField<String>(
+          value: selectedInboxType,
+          items: items.map((type) {
+            return DropdownMenuItem<String>(
+              value: type,
+              child: Text(type),
+            );
+          }).toList(),
+          onChanged: onChanged(),
+          decoration: InputDecoration(
+            border: OutlineInputBorder(),
+          ),
+        ),
+      ],
+    );
+  }
+}

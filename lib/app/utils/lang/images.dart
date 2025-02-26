@@ -49,6 +49,7 @@ class CustomIcons {
 }
 
 class CustomImages {
+  static String imageIphone = "assets/images/image_iphone_vector.png";
   static String imageWaSenderBG = "assets/images/image_background.png";
   static String imageWaSenderIntro = "assets/images/image_introduction.png";
   static String imageWaSenderLogo = "assets/images/image_wasender_logo.png";
