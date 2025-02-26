@@ -105,24 +105,6 @@ class PerangkatSayaCard extends StatelessWidget {
                   ],
                 ),
               ),
-              Spacer(),
-              Visibility(
-                visible: isInbox == false,
-                child: IconButton(
-                  icon: Icon(Icons.more_vert),
-                  onPressed: () {
-                    // Handle menu action
-                    showMenu(
-                      context: context,
-                      position: RelativeRect.fromLTRB(100, 100, 0, 0),
-                      items: [
-                        PopupMenuItem(child: Text("Edit")),
-                        PopupMenuItem(child: Text("Delete")),
-                      ],
-                    );
-                  },
-                ),
-              ),
             ],
           ),
           const SizedBox(height: 12),

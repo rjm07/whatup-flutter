@@ -1,13 +1,10 @@
 import 'dart:io' show Platform;
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:wasender/app/core/models/perangkat_saya/perangkat_saya.dart';
 import 'package:wasender/app/ui/pages/feature_main/feature_pages/menu/feature_kontak/kontak_screen.dart';
 import 'package:wasender/app/ui/pages/feature_main/feature_pages/menu/feature_pembayaran/pembayaran_screen.dart';
 import 'package:wasender/app/ui/pages/feature_main/feature_pages/menu/feature_pengguna/pengguna_screen.dart';
 import 'package:wasender/app/ui/pages/feature_main/feature_pages/menu/feature_perangkat_saya/perangkat_saya_screen.dart';
 import 'package:wasender/app/ui/pages/feature_main/menu/sidebar_menu_screen.dart';
-import '../../../core/services/perangkat_saya/perangkat_saya.dart';
 import '../../../core/services/preferences.dart';
 import '../../../utils/lang/colors.dart';
 import '../../../utils/lang/images.dart';

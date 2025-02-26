@@ -63,7 +63,7 @@ class _SideBarMenuScreenState extends State<SideBarMenuScreen> {
         perangkatDevices = devices.perangkatSayaDataList;
       });
 
-      debugPrint("Device list updated: ${perangkatDevices} items");
+      debugPrint("Device list updated: $perangkatDevices items");
     }
   }
 
@@ -253,7 +253,7 @@ class _SideBarMenuScreenState extends State<SideBarMenuScreen> {
                               }
                             } else {
                               debugPrint("No devices found.");
-                              debugPrint("Devices: ${perangkatDevices}");
+                              debugPrint("Devices: $perangkatDevices");
                               ScaffoldMessenger.of(context).showSnackBar(
                                 const SnackBar(content: Text("No devices available")),
                               );
